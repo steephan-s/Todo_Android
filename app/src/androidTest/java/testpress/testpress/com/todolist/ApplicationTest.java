@@ -1,4 +1,4 @@
-package testpress.testpress.com.todo;
+package testpress.testpress.com.todolist;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
