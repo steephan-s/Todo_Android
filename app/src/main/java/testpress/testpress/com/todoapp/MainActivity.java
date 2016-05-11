@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -53,9 +55,30 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
                 startActivity(intent);
             }
         });
-
+        registerForContextMenu(listView);
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Select the Action");
+        menu.add(0, v.getId(), 0, "Done Task");
+        menu.add(0, v.getId(), 0, "Edit");
+        menu.add(0, v.getId(), 0, "Delete");
+    }
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        if(item.getTitle()=="Done Task"){
+
+        }
+        else if(item.getTitle()=="Delete"){
+
+        }else{
+            return false;
+        }
+        return true;
+    }
 
 
     private void getTodos(){
@@ -100,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
         Intent intent = new Intent(this, ShowTodoDetails.class);
         Todo book = toodos.get(position);
         intent.putExtra(KEY_BOOK_ID,book.getId());
