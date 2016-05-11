@@ -12,7 +12,7 @@ import retrofit.http.POST;
 
 public interface TodosAPI {
 
-    @GET("/api/v1/todo/")
+    @GET("/api/v1/todo/sort/")
     public void getTodos(Callback<List<Todo>> response);
 
 
