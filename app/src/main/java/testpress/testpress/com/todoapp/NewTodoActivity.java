@@ -37,15 +37,21 @@ public class NewTodoActivity extends AppCompatActivity implements View.OnClickLi
     }
     @Override
     public void onClick(View v) {
-        insertTodo();
-        InputMethodManager inputManager = (InputMethodManager)
-                getSystemService(Context.INPUT_METHOD_SERVICE);
+        if(todo_message.getText().toString().trim().length()==0){
+            Toast.makeText(NewTodoActivity.this, "Text Field is empty", Toast.LENGTH_LONG).show();
+        }
+        else {
+            insertTodo();
+            InputMethodManager inputManager = (InputMethodManager)
+                    getSystemService(Context.INPUT_METHOD_SERVICE);
 
-        inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                InputMethodManager.HIDE_NOT_ALWAYS);
-        todo_message.setText("");
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+            inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                    InputMethodManager.HIDE_NOT_ALWAYS);
+            todo_message.setText("");
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+
     }
     private void insertTodo(){
         RestAdapter adapter = new RestAdapter.Builder()
