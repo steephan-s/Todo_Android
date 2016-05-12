@@ -71,7 +71,7 @@ public class NewTodoActivity extends AppCompatActivity implements View.OnClickLi
 
 
                         String output = "";
-                        String success = "Successfully Inserted";
+                        String success = "New Todo Task Added Successfully";
 
                         try {
 

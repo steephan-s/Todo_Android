@@ -69,16 +69,13 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     }
     @Override
     public boolean onContextItemSelected(MenuItem item){
-        if(item.getTitle()=="Done Task"){
-
-        }
-        else if(item.getTitle()=="Delete"){
-
-        }else{
-            return false;
-        }
+        if(item.getTitle()=="Done Task"){}
+        else if(item.getTitle()=="Delete"){}
+        else if(item.getTitle()=="Edit"){}
+        else{return false;}
         return true;
     }
+
 
 
     private void getTodos(){
@@ -131,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         intent.putExtra(KEY_BOOK_PRICE,book.getAdd_date());
         startActivity(intent);
     }
+
 
 
 }
