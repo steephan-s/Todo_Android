@@ -14,7 +14,7 @@ import retrofit.http.Path;
 
 public interface TodosAPI {
 
-    @GET("/api/v1/todo/sort/")
+    @GET("/api/v1/todo/sort/?ordering=-add_date")
     public void getTodos(Callback<List<Todo>> response);
 
 

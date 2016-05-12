@@ -18,7 +18,10 @@
 
     <Button
         android:id="@+id/submit_button"
+        android:layout_marginRight="100dp"
+        android:layout_marginLeft="100dp"
         android:layout_gravity="center"
+        android:background="@drawable/botton_boder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_send"/>

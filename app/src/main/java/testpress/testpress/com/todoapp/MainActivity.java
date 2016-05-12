@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     }
 
 
-
     private void getTodos(){
         final ProgressDialog loading = ProgressDialog.show(this,"Updating Todos","Please wait...",false,false);
 
